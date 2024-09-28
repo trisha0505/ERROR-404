@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnix - Quiz</title>
+    <style>
+        /* General styles */
+        body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    background-image: url('back.jpg');
+    background-size: cover; /* Ensures the image covers the whole background */
+  background-position: center; /* Centers the image */
+ background-repeat: no-repeat;
+ opacity: initial;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nav {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 30px;
+        }
+        .nav-item {
+            padding: 12px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+        .nav-item.active {
+            background-color: #e0e0e0;
+            font-weight: bold;
+        }
+/* Header styles */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav-item.na {
+            background-color: #91adb3;
+            font-weight: bold;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+/* Quiz section styles */
+.quiz-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.quiz-section h1 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.quiz-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.quiz-question p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.quiz-question ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-question li {
+    background-color: #f4f4f4;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-question li:hover {
+    background-color: #ddd;
+}
+/* Progress bar styles */
+.progress-bar {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin: 2rem 0;
+}
+
+.progress {
+    width: 0;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+/* Rewards styles */
+.rewards {
+    margin-top: 2rem;
+}
+
+.rewards h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.badge {
+    font-size: 2rem;
+}
+.badge.bronze {
+    color: #cd7f32;
+}
+
+.badge.silver {
+    color: #c0c0c0;
+}
+
+.badge.gold {
+    color: #ffd700;
+}
+
+/* Footer styles */
+footer{
+            display: flex;
+            overflow: hidden;
+            background-color: black;
+            margin-top: 0%;
+        }
+         footer a{
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+.flex-align-left {
+    margin-left: auto;
+}
+
+.copyright {
+    color: #fff;
+    margin-left: auto;
+    padding-right: 15px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo" role="banner">Learnix</div>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html">Features</a></li>
+                    <li><a href="contact.html" class="cta-button">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="quiz-section">
+            <div class="container">
+                <div class="container">
+                    <div class="nav">
+                        <div class="nav-item na">Upload</div>
+                        <div class="nav-item na">Study</div>
+                        <div class="nav-item active">Quiz & Rewards</div>
+                        <div class="nav-item na">Resources</div>
+                    </div>
+                <h1>Quiz and Rewards</h1>
+                <form id="quizForm">
+                    <label for="notesFile">Select your uploaded notes:</label>
+                    <input type="file" id="notesFile" name="notesFile" accept=".txt,.pdf,.docx">
+                    <br><button type="submit">Start Quiz</button>
+                </form>
+                <div id="quiz-container">
+                    <!-- AI-generated quiz content will be inserted here -->
+                </div>
+                <div class="progress-bar"></div>
+                    <div class="progress"></div>
+                </div>
+                <div class="rewards">
+                    <h2>Rewards</h2>
+                    <div class="badges">
+                        <!-- Badges will be displayed here -->
+                        <span class="badge bronze">🥉</span>
+                        <span class="badge silver">🥈</span>
+                        <span class="badge gold">🥇</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="#" class="flex-align-left">© 2024 | Learnix</a>
+    </footer>
+</body>
+</html>

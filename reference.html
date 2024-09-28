@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnix - Find Related Resources</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url('back.jpg'); /* Add your background image */
+            background-size: cover; /* Ensures the image covers the whole background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+        }
+
+        header {
+            background-color: rgba(216, 194, 115, 0.9); /* Light brown with 90% opacity */
+            color: #000;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        header .logo {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        header nav {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        header nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* White color with 80% opacity */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button.submit {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.submit:hover {
+            background-color: #2980b9;
+        }
+
+        #resources-feedback {
+            margin-top: 20px;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Learnix</div>
+        <nav>
+            <a href="index.html">Home Page</a>
+            <a href="about.html">About Us</a>
+            <a href="features.html">Features</a>
+            <a href="join.html">Join Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <h1 style="text-align: center;">Find Related Resources</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h3>Find Resources Related to Your Topic</h3>
+            <input type="text" id="resource-query" placeholder="Enter topic or keywords...">
+            <button class="submit" onclick="findResources()">Search Resources</button>
+            <div id="resources-feedback"></div>
+        </div>
+    </main>
+
+    <script>
+        function findResources() {
+            const query = document.getElementById('resource-query').value;
+            if (query.trim() !== "") {
+                document.getElementById('resources-feedback').innerText = Searching for resources related to "${query}"...;
+                
+                // Simulated resource search
+                setTimeout(() => {
+                    document.getElementById('resources-feedback').innerText = Resources found for "${query}":\n1. Resource Link A\n2. Resource Link B\n3. Resource Link C;
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>

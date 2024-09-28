@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnix - Personal Guide and Evaluation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url('back.jpg'); /* Add your background image */
+            background-size: cover; /* Ensures the image covers the whole background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+        }
+
+        header {
+            background-color: rgba(216, 194, 115, 0.9); /* Light brown with 90% opacity */
+            color: #000;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        header .logo {
+            position: absolute;
+            top: 15px;
+            left: 20px; /* Position Learnix to the top left */
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        header nav {
+            position: absolute;
+            top: 15px;
+            right: 20px; /* Keep navigation links on the top right */
+        }
+
+        header nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Buttons Section */
+        .buttons-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .buttons-container button {
+            margin: 10px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons-container button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Transparent Box */
+        .transparent-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            text-align: left;
+            perspective: 1000px; /* For 3D effect */
+        }
+
+        .transparent-box h4 {
+            margin-bottom: 10px;
+        }
+
+        .feedback-message {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* Input Section */
+        .input-section {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .input-section input, .input-section textarea {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .input-section button {
+            margin-top: 10px;
+            background-color: #2ecc71; /* Green button */
+        }
+
+        .input-section button:hover {
+            background-color: #27ae60; /* Darker green on hover */
+        }
+        footer{
+            display: flex;
+            overflow: hidden;
+            background-color: black;
+        }
+        footer a{
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Learnix</div>
+        <nav>
+            <a href="index.html">Home Page</a>
+            <a href="about.html">About Us</a>
+            <a href="features.html">Features</a>
+            <a href="join.html">Join Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <h1 style="text-align: center;">Personal Guide and Evaluation</h1>
+    </header>
+
+    <main>
+        <div class="buttons-container" id="buttons-container">
+            <h3>Options</h3>
+            <button onclick="addPersonalGuide()">Add Personal Guide</button>
+            <button onclick="analyzePastPapers()">Analyze Past Question Papers</button>
+            <button onclick="addPastQuestionPaper()">Add Past Question Paper</button>
+        </div>
+
+        <div id="input-section-container" class="input-section">
+            <h4>Provide Details for Your Personal Guide</h4>
+            <input type="text" id="guide-name" placeholder="Enter guide name" />
+            <input type="text" id="guide-topic" placeholder="Enter topic for your guide" />
+            <textarea id="guide-notes" rows="4" placeholder="Enter additional notes or details"></textarea>
+            <button onclick="submitPersonalGuide()">Submit</button>
+        </div>
+
+        <div id="past-paper-section" class="input-section" style="display: none;">
+            <h4>Add Past Question Paper</h4>
+            <input type="text" id="past-paper-name" placeholder="Enter past paper name" />
+            <textarea id="past-paper-notes" rows="4" placeholder="Enter additional notes or details"></textarea>
+            <button onclick="submitPastQuestionPaper()">Submit</button>
+        </div>
+
+        <div class="transparent-box">
+            <h4>Feedback</h4>
+            <div class="feedback-message">
+                <p>This is where the feedback or evaluation results will be displayed.</p>
+            </div>
+        </div>
+
+        <!-- Back Button Section -->
+        <div id="back-button-container" class="buttons-container" style="display: none;">
+            <button onclick="goBack()">Back</button>
+        </div>
+    </main>
+
+    <script>
+        function addPersonalGuide() {
+            // Functionality to add a personal guide
+            const feedbackBox = document.querySelector('.feedback-message p');
+            feedbackBox.innerText = "Adding your personal guide...";
+            // Simulate fetching data
+            setTimeout(() => {
+                feedbackBox.innerText = "Your personal guide has been added successfully!";
+            }, 2000);
+        }
+
+        function analyzePastPapers() {
+            // Functionality to analyze past question papers
+            const feedbackBox = document.querySelector('.feedback-message p');
+            feedbackBox.innerText = "Analyzing past question papers...";
+
+            // Remove the input section and show back button
+            document.getElementById('input-section-container').style.display = 'none';
+            document.getElementById('past-paper-section').style.display = 'none';
+            document.getElementById('buttons-container').style.display = 'none';
+            document.getElementById('back-button-container').style.display = 'block';
+
+            // Simulate fetching data
+            setTimeout(() => {
+                feedbackBox.innerText = "The analysis of past question papers is complete!";
+            }, 2000);
+        }
+
+        function submitPersonalGuide() {
+            const name = document.getElementById('guide-name').value;
+            const topic = document.getElementById('guide-topic').value;
+            const notes = document.getElementById('guide-notes').value;
+            const feedbackBox = document.querySelector('.feedback-message p');
+            const feedbackMessage = document.querySelector('.feedback-message');
+
+            if (name.trim() === "" || topic.trim() === "" || notes.trim() === "") {
+                feedbackBox.innerText = "Please fill in all fields.";
+                return;
+            }
+
+            feedbackBox.innerText = Your personal guide "${name}" for "${topic}" has been added with notes: "${notes}";
+
+            // Clear the input fields
+            document.getElementById('guide-name').value = '';
+            document.getElementById('guide-topic').value = '';
+            document.getElementById('guide-notes').value = '';
+
+            // Add flipping animation
+            feedbackMessage.classList.add('flipped');
+
+            // Reset flip after a delay
+            setTimeout(() => {
+                feedbackMessage.classList.remove('flipped');
+            }, 2000);
+        }
+
+        function addPastQuestionPaper() {
+            // Show the past question paper input section
+            document.getElementById('input-section-container').style.display = 'none';
+            document.getElementById('past-paper-section').style.display = 'block';
+        }
+
+        function submitPastQuestionPaper() {
+            const name = document.getElementById('past-paper-name').value;
+            const notes = document.getElementById('past-paper-notes').value;
+            const feedbackBox = document.querySelector('.feedback-message p');
+            const feedbackMessage = document.querySelector('.feedback-message');
+
+            if (name.trim() === "" || notes.trim() === "") {
+                feedbackBox.innerText = "Please fill in all fields.";
+                return;
+            }
+
+            feedbackBox.innerText = Past question paper "${name}" has been added with notes: "${notes}";
+
+            // Clear the input fields
+            document.getElementById('past-paper-name').value = '';
+            document.getElementById('past-paper-notes').value = '';
+
+            // Add flipping animation
+            feedbackMessage.classList.add('flipped');
+
+            // Reset flip after a delay
+            setTimeout(() => {
+                feedbackMessage.classList.remove('flipped');
+            }, 2000);
+        }
+
+        function goBack() {
+            // Show options and hide past paper input
+            document.getElementById('input-section-container').style.display = 'block';
+            document.getElementById('past-paper-section').style.display = 'none';
+            document.getElementById('buttons-container').style.display = 'block';
+            document.getElementById('back-button-container').style.display = 'none';
+
+            // Clear feedback message
+            const feedbackBox = document.querySelector('.feedback-message p');
+            feedbackBo<x.innerText = "This is where the feedback or evaluation results will be displayed.";
+        }
+    </script>
+        <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#" class="flex-align-left">© 2024 | Learnix</a>
+    </footer>
+</body>
+</html>

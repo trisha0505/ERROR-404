@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnix - Chat with Us</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url('back.jpg'); /* Add your background image */
+            background-size: cover; /* Ensures the image covers the whole background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+        }
+
+            header {
+    background-color: rgba(216, 194, 115, 0.9); /* Light brown with 90% opacity */
+    color: #000;
+    padding: 1rem 0;
+    position: relative;
+}
+
+        
+
+        header .logo {
+            position: absolute;
+            top: 15px;
+            left: 20px; /* Position Learnix to the top left */
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        header nav {
+            position: absolute;
+            top: 15px;
+            right: 20px; /* Keep navigation links on the top right */
+        }
+
+        header nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+    max-width: 600px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* White color with 80% opacity */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Keep this as it is */
+    flex-direction: column;
+    height: 400px;
+}
+
+
+        
+
+        .chat-header {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .chat-box {
+            .chat-box {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: rgba(249, 249, 249, 0.8); /* Light gray with 80% opacity */
+}
+
+        }
+
+        .message {
+            margin: 0.5rem 0;
+        }
+
+        .message.user {
+            text-align: right;
+        }
+
+        .message p {
+            display: inline-block;
+            padding: 0.75rem 1rem;
+            border-radius: 15px;
+            max-width: 70%;
+        }
+
+        .message.user p {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .message.bot p {
+            background-color: #ddd;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chat-input button {
+            padding: 0.75rem 1rem;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            margin-left: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #2980b9;
+        }
+        footer{
+            display: flex;
+            overflow: hidden;
+            background-color: black;
+        }
+        footer a{
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Learnix</div> <!-- Added Learnix to top left -->
+
+        <nav>
+            <a href="index.html">Home Page</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html">Features</a>
+            <a href="join.html">Join Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <h1 style="text-align: center;">Chat with Notes</h1>
+    </header>
+
+    <main>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>We're here to help with studies</h3>
+            </div>
+            <div class="chat-box" id="chat-box">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Type your message here...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function sendMessage() {
+            const chatInput = document.getElementById('chat-input-field');
+            const messageText = chatInput.value;
+
+            if (messageText.trim() !== "") {
+                // User message
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('message', 'user');
+                userMessage.innerHTML = <p>${messageText}</p>;
+                document.getElementById('chat-box').appendChild(userMessage);
+
+                // Simulate bot response
+                setTimeout(() => {
+                    const botResponse = document.createElement('div');
+                    botResponse.classList.add('message', 'bot');
+                    botResponse.innerHTML = <p>We received your message: ${messageText}</p>;
+                    document.getElementById('chat-box').appendChild(botResponse);
+
+                    // Scroll to bottom
+                    document.getElementById('chat-box').scrollTop = document.getElementById('chat-box').scrollHeight;
+                }, 1000);
+
+                // Clear the input field
+                chatInput.value = '';
+
+                // Auto-scroll to the bottom
+                document.getElementById('chat-box').scrollTop = document.getElementById('chat-box').scrollHeight;
+            }
+        }
+    </script>
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+      
+    </footer>
+</body>
+</html>

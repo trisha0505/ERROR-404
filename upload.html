@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnix - Revolutionize Your Learning</title>
+
+    <!-- Linking Flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    
+ <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #af984d;
+            --text-color: #333;
+            --bg-color: #4a9cad;
+            --hero-bg-color: #5480b5; 
+        }
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: rgb(80, 124, 237);
+            margin: 0;
+            padding: 40px;
+            background-color: #b2c1d6e1;
+            max-width: 100%
+        } 
+
+        *container{
+            width: 90%;
+            max-width: 1200px;
+            height: 100px;
+            margin: 30, auto;
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
+        }
+        
+        .header-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color)
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color:var(--text-color);
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+        /* Hero section styles */
+        .hero {
+            background-color: var(--hero-bg-color);
+            background-attachment: fixed;
+            background-position: center;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            color: #E52B50#501f4e;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Features section styles */
+        .features {
+            padding: 4rem 0;
+        }
+
+    .features-grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color)
+        }
+        footer{
+            display: flex;
+            overflow: hidden;
+            background-color: black;
+        }
+        footer a{
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .copyright{
+            color: #fff;
+            margin-left: auto;
+            padding-right: 15px;
+        }
+        .flex-align-left{
+            margin-left: auto;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .features-grid{
+                grid-template-columns: 1fr;
+            }
+        }
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 100%;
+            height: 200px;
+            margin: 0 auto;
+            background-color: rgb(237, 238, 243);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            /* max-width: 400px;
+            max-height: 200px; ; */
+        }
+
+        /* .nav-item {
+            padding: 20px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .nav-item.active {
+            background-color: #e0e0e0;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #666;
+            margin-top: 0;
+        }
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .upload-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .upload-text {
+            margin-bottom: 5px;
+        }
+        .upload-formats {
+            color: #666;
+            font-size: 14px;
+        }
+        .connect-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #1a202c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        } */
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f0f0;
+            max-width: 100%;
+        } */
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .nav {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 30px;
+        }
+        .nav-item {
+            padding: 12px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+        .nav-item.active {
+            background-color: #e0e0e0;
+            font-weight: bold;
+        }
+        .nav-item.na {
+            background-color: #91adb3;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 60px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .upload-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .upload-text {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .upload-formats {
+            color: #666;
+            font-size: 16px;
+        }
+        .connect-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #1a202c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .connect-btn:hover {
+            background-color: #2d3748;
+        }
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo" role="banner">Learnix</div>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="#">Home Page</a></li>
+                    <li><a href="home.html">About Us</a></li>
+                    <li><a href="#3">Features</a></li>
+                    <li><a href="#4">Join us</a></li>
+                    <li><a href="#5" class="cta-button">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .nav-item {
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .nav-item.active {
+            background-color: #e0e0e0;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #666;
+            margin-top: 0;
+        }
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .upload-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .upload-text {
+            margin-bottom: 5px;
+        }
+        .upload-formats {
+            color: #666;
+            font-size: 14px;
+        }
+        .connect-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #1a202c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style> -->
+
+    <div class="container">
+        <div class="nav">
+            <div class="nav-item active">Upload</div>
+            <div class="nav-item na"><a href="study.html"> Study</a> </div>
+            <div class="nav-item na"><a href="quiz.html">Quiz & Rewards</a></div>
+            <div class="nav-item na"><a href="reference.html">Resources</a></div>
+        </div>
+        <h1>Upload Notes</h1>
+        <p>Upload your study materials or connect to GitHub/Google Classroom</p>
+        <div class="upload-area">
+            <div class="upload-icon">&#8593;</div>
+            <div class="upload-text">Click to upload or drag and drop</div>
+            <div class="upload-formats">PDF, DOCX, JPG, PNG (MAX. 10MB)</div>
+        </div>
+        <a href="#" class="connect-btn">&#9733; Connect to GitHub</a>
+        <a href="#" class="connect-btn">&#127979; Connect to Google Classroom</a>
+ 
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#" class="flex-align-left">© 2024 | Learnix</a>
+    </footer>
+    <!-- Flickity JS files -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+</html>

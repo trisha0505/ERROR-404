@@ -1,15 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learnix - Revolutionize Your Learning</title>
-
-    <!-- Linking Flickity -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    
- <style>
+    <title>Study Assistant</title>
+    <style>
         :root {
             --primary-color: #3498db;
             --secondary-color: #d8c173;
@@ -28,6 +23,10 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
+            background-image: url('back.jpg'); /* Add your background image */
+            background-size: cover; /* Ensures the image covers the whole background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; 
         }
 
         *container{
@@ -166,7 +165,75 @@
                 grid-template-columns: 1fr;
             }
         }
-</style>
+<
+
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        } */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+            color: rgba(10, 87, 221, 0.77) ;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #666;
+        }
+        .tab.active {
+            border-bottom: 2px solid #007bff;
+            color: #007bff;
+        }
+        .files-button {
+            float: right;
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .content-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            width: 1000px;
+            height: 500px;
+            /* align-c: center; */
+            
+            
+        }
+        .content-box h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .content-box p {
+            color: #666;
+            margin-bottom: 0;
+        }
+    </style>
+
+
 </head>
 <body>
     <header>
@@ -182,63 +249,22 @@
                 </ul>
             </nav>
         </div>
+  
+
+
     </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Revolutionize Your <br> Learning with Learnix!</h1>
-                <p>Experience a new era of studying with our AI-powered platform. Upload, manage, chat with your notes, enjoy gamified learning, receive personalized guidance, generate summaries and mindmaps, and access curated resources.</p>
-                <a href="#" class="cta-button">Start Learning</a>
-                <a href="#" style="color: #fff; margin-left: 1rem;">Explore Features →</a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="feature-card">
-                       <a href="upload.html"> <h3>Upload and Manage Notes</h3></a>
-                        <p>Store and organize all your educational material effortlessly.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Chat with Notes</h3>
-                        <p>Engage in interactive discussions with your notes.</p>
-                        <a href="chat.html" > <button class="cta-button" onclick="openChat()">Start Chat</button> 
-                        </a>
-
-                    </div>
-                    <div class="feature-card">
-                        <a href="quiz.html">
-                        <h3>Game/Quiz and Rewards</h3></a>
-                        <p>Learning made fun with gamified quizzes and rewards.</p>
-                    </div>
-                    <div class="feature-card">
-                        <a href="Personal.html" ><h3>Personal Guide and Evaluation</h3></a>
-                        <p>Personalized guidance and evaluation to enhance your learning journey.</p>
-                    </div>
-                    <div class="feature-card">
-                        <a href="summary.html"><h3>Summary and Mindmaps</h3></a>
-                        <p>Generate concise summaries and creative mindmaps of your notes.</p>
-                    </div>
-                    <div class="feature-card">
-                        <a href="reference.html"><h3>Reference Links</h3></a>
-                        <p>Access curated online resources related to your topics.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <a href="#">FAQ</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#" class="flex-align-left">&copy; 2024 | Learnix</a>
-    </footer>
-    <!-- Flickity JS files -->
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <div class="container">
+        <h1>Study Assistant</h1>
+        <!-- <div class="tabs">
+            <button class="tab">Upload</button>
+            <button class="tab">Generate</button>
+            <button class="tab active">Chat</button>
+            <button class="files-button">Files</button>
+        </div> -->
+        <div class="content-box">
+            <h2>Your Files</h2>
+            <p>Manage your uploaded study materials</p>
+        </div>
+    </div>
 </body>
 </html>
-
